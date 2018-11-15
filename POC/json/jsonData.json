@@ -1,0 +1,29 @@
+{  
+    "cartItems":[  
+       {  
+          "imgPath":"assets/T1.jpg",
+          "productName" : "SOLID GREEN COTTON TSHIRT",
+          "productStyle": "MS|3KT|1906",
+          "productColor" : "Black",
+          "productSize" : "S",
+          "productQty" : 1,
+          "productPrice" : "500"
+       },{  
+        "imgPath":"assets/T2.jpg",
+        "productName" : "PINK RAINBOW PRINT GIRLS TEE",
+        "productStyle": "MS|3KT|1906",
+        "productColor" : "Pink",
+        "productSize" : "S",
+        "productQty" : 2,
+        "productPrice" : "600"
+     },{  
+        "imgPath":"assets/T3.jpg",
+        "productName" : "BLUE FLOWER PATTERN SHIRT",
+        "productStyle": "MS|3KT|1906",
+        "productColor" : "White",
+        "productSize" : "L",
+        "productQty" : 3,
+        "productPrice" : "400"
+     }],
+     "promotionDiscount":"70"
+    }
