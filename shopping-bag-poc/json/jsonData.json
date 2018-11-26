@@ -1,0 +1,53 @@
+{
+  "cartItems": [
+    {
+      "id": 1,
+      "title": "SOLID SHIRT V-NECK COTTON",
+      "description": "",
+      "style": "MS13KT1906",
+      "color": "Red",
+      "size": "M",
+      "qty": "1",
+      "price": "11.00",
+      "prompCode": "SAPIENT",
+      "image": "image_1.png"
+    },
+    {
+      "id": 2,
+      "title": "CROP TOP OPTICAL PATTERN WEAVE",
+      "description": "",
+      "style": "MS13KT1906",
+      "color": "Gray",
+      "size": "S",
+      "qty": "1",
+      "price": "17.00",
+      "prompCode": "SAPIENT",
+      "image": "image_2.png"
+    },
+    {
+      "id": 3,
+      "title": "FLOWER PATTERN SHIRT",
+      "description": "",
+      "style": "MS13KT1906",
+      "color": "Blue",
+      "size": "M",
+      "qty": "1",
+      "price": "10.00",
+      "prompCode": "SAPIENT",
+      "image": "image_3.png"
+    },
+    {
+      "id": 4,
+      "title": "PAISLY JEAN",
+      "description": "",
+      "style": "MS13KT1906",
+      "color": "Red",
+      "size": "L",
+      "qty": "1",
+      "price": "14.00",
+      "prompCode": "SAPIENT",
+      "image": "image_4.png"
+    }
+  ],
+  "subTotal":"52.00"
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" />
+    <meta name="description" content="Shopping cart details" />
+    <meta name="keywords" content="shopping cart, online shopping" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <title>Shopping Box</title>
+</head>
+
+<body>
+    <header>
+        <h1>YOUR SHOPPING BAG</h1>
+    </header>
+    <main id="main">
+        <section class="product-listing-wrapper"></section>
+        <!-- Section Checkout Detail -->
+        <section class="product-checkout">
+            <div class="product-checkout__customer-support">
+                <p class="customer-support customer-support__help">
+                    Need help <br>
+                    or have questions?
+                </p>
+                <p class="customer-support customer-support__call">
+                    Call Customer Service at <br>
+                    1-800-555-5555
+                </p>
+                <p class="customer-support customer-support__chat">
+                    <a href="#">Chat with one of <br> our stylists</a>
+                </p>
+                <p class="customer-support customer-support__policy">
+                    <a href="#"> See return <br> & exchange policy</a>
+                </p>
+            </div>
+            <div class="product-checkout__total-details">
+                <div class="total-details total-details__promotion">
+                    <div class="promotion promotion__label field_label">
+                        <label>ENTER PROMOTION CODE <br> OR GIFT CARD</label>
+                    </div>
+                    <div class="promotion promotion__value field_value">
+                        <input type="text">
+                        <button value="apply">APPLY</button>
+                    </div>
+                </div>
+                <div class="total-details total-details__subtotal">
+                    <div class="subtotal subtotal__label field_label">
+                        <strong><label>SUBTOTAL</label></strong>
+                    </div>
+                    <div class="subtotal subtotal__value field_value">
+                        <sup>$</sup><label></label>
+                    </div>
+                </div>
+                <div class="total-details total-details__promo-applied">
+                    <div class="promo-applied promo-applied_label field_label">
+                        <strong><label>PROMOTION CODE <span>JF10</span> APPLIED</label></strong>
+                    </div>
+                    <div class="promo-applied promo-applied_value field_value">
+                        - <sup>$</sup><label>0.00</label>
+                    </div>
+                </div>
+                <div class="total-details total-details__shipping">
+                    <div class="shipping shipping__label field_label">
+                        <strong><label>ESTIMATED SHIPPING<sup>*</sup></label></strong>
+                        </br>
+                        <span> You qualify for free shipping because your order is
+                            over
+                            <sup>$</sup>
+                            1.00 <sup>*</sup></span>
+                    </div>
+                    <div class="shipping shipping__label field_value">
+                        <label>FREE</label>
+                    </div>
+                </div>
+                <div class="total-details total-details__total">
+                    <div class="total total__label field_label">
+                        <strong><label>ESTIMATED TOTAL</label></strong>
+                        </br>
+                        <span> Tax will be applied during checkout</span>
+                    </div>
+                    <div class="total total__value field_value">
+                        <sup>$</sup><label></label>
+                    </div>
+                </div>
+                <div class="total-details total-details__checkout">
+                    <div class="checkout checkout__submit">
+                        <button>Checkout</button>
+                        <a href="#"> CONTINUE SHOPPING</a>
+                    </div>
+                    <div class="checkout checkout_message">
+                        <p>
+                            Secure Checkout. Shopping is always safe and secure.
+                        </p>
+                        &nbsp;&nbsp;
+                        <div>
+                            <i class="fa fa-lock fa-2x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="total-details">
+                    <a href="#">SIGN IN</a> to save your cart and have access to your items on mobile, tablet and
+                    desktop
+                </div>  -->
+            </div>
+        </section>
+        <section class="popup-box"></section>
+        <section class="overlay">
+    </main>
+
+
+    <!-- Handlebar Template for Product Listing Section-->
+    <script id="product-listing-template" type="text/x-handlebars-template">
+        <!-- Section Product Listing -->
+        <section class="product-listing">
+            <!-- Column Headings-->
+            <div class="product-listing__product-column">
+                <div class="product-column product-column__item">{{cartItems.length}} ITEMS</div>
+                <div class="product-column product-column__size">SIZE</div>
+                <div class="product-column product-column__qty">QTY</div>
+                <div class="product-column product-column__price">PRICE</div>
+            </div>
+            <!-- Prouduct List -->
+            {{#cartItems}}
+            <div class="prod-listing__product-row" id="product-row{{@index}}">
+                <div class="product-row product-row__item">
+                    <figure class="item__photo">
+                        <div class="photo photo__product-image">
+                            <img src="/assets/{{image}}" alt="Product Image">
+                        </div>
+                        <figcaption class="photo photo__fig-caption">
+                            <strong class="fig-caption fig-caption__title">{{title}}</strong>
+                            <div class="fig-caption fig-caption__style">Style#:&nbsp;{{style}}</div>
+                            <div class="fig-caption fig-caption__color">Color:&nbsp;{{color}}</div>
+                            <div class="product-row product-row__size mobile">  <label>Size</label> {{size}} </div>
+                            <div class="product-row product-row__qty mobile"> <label>Qty</label> <input class="product-row__qty--input" type="text" disabled id="txtBox{{@index}}" value="{{qty}}"></div>
+                            <div class="product-row product-row__price mobile"> <sup>$</sup>{{price}}</div>
+                            <div class="fig-caption fig-caption__links">
+                                <div class="desktop">
+                                <a href="#" class="links links__edit " id="linkEdit_{{@index}}">EDIT</a>&nbsp; <label>|</label> &nbsp;
+                                <a href="#" class="links links__remove " id="linkRemove_{{@index}}">X REMOVE</a>&nbsp; | &nbsp;
+                                <a href="#" class="links links__save-for-later "id="{{@index}}">SAVE FOR LATER</a>
+                                </div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="product-row product-row__size desktop"> {{size}} </div>
+                <div class="product-row product-row__qty desktop"> <input class="product-row__qty--input" type="text" disabled id="txtBox{{@index}}" value="{{qty}}"></div>
+                <div class="product-row product-row__price desktop"> <sup>$</sup>{{price}}</div>
+                <div class="mobile mobile__links">
+                        <a href="#" class="links links__edit" id="linkEdit_{{@index}}">EDIT</a>&nbsp; | &nbsp;
+                        <a href="#" class="links links__remove" id="linkRemove_{{@index}}">X REMOVE</a>&nbsp; | &nbsp;
+                        <a href="#" class="links links__save-for-later"id="{{@index}}">SAVE FOR LATER</a>
+                </div>
+            </div>
+            {{/cartItems}}
+        </section>
+    </script>
+
+
+    <!--Handlebar Template for Edit Popup-->
+    <script id="popup-template" type="text/x-handlebars-template">
+        <section class="popup-block" id="popup_block">
+                <div class="popup-block__popup-left">
+                    <div class="popup-left popup-left__title">
+                        <h3>{{title}}</h3>
+                        <label><sup>$</sup>{{price}}</label>
+                    </div>
+                    <div class="popup-left popup-left__popup-item">
+                        <select class="popup-item__select" name="size">
+                            <option {{selected size "M"}}>M</option>
+                            <option {{selected size "L"}}>L</option>
+                            <option {{selected size "S"}}>S</option>
+                         </select>
+                         <input class="popup-item__qty" type="text" value="{{qty}}" />
+                    </div>
+                    <div class="popup-left popup-left__edit">
+                        <button class="edit__button">EDIT</button>
+                    </div>
+                </div>
+                <div class="popup-block__popup-right">
+                    <figure>
+                        <img src="assets/{{image}}">
+                    </figure>
+                </div>
+        </section>
+        <a href="#" class="popup-block-close">X</a>	
+    </script>
+
+    <script src="scripts/libs/jquery.js"></script>
+    <script src="scripts/libs/jquery.bxslider.js"></script>
+    <script src="scripts/libs/handlebars.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
